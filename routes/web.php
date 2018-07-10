@@ -11,16 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-	return redirect('home');
-});
-Route::get('/questoes', 'questoesController@listar' );
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-$this->get('/verify-user/{code}', 'Auth\RegisterController@activateUser')->name('activate.user');
 
 Route::any('/cadastrarQuestoes', 'questoesController@cadastrar')->name('cadastrarQuestoes');
 
@@ -29,3 +22,15 @@ Route::any('/listarQuestoes', 'questoesController@listarPerguntas')->name('lista
 Route::any('/responderQuestoes/{id}', 'questoesController@votar')->name('responderQuestoes');
 
 Route::any('/listarResultados', 'questoesController@listarResultados')->name('listarResultados');
+
+Route::any('/editarQuestoes', 'questoesController@editarQuestao')->name('editarQuestionario');
+
+Route::any('/deletarQuestoes', 'questoesController@deletarQuestao')->name('deletarQuestionario');
+
+Route::any('/cadastrarPostagens', 'PostagensController@cadastrarPostagem')->name('cadastrarPostagens');
+
+Route::any('/', 'PostagensController@listarPostagens')->name('listarPostagens');
+
+Route::any('/editarPostagens', 'PostagensController@editarPostagem')->name('editarPostagens');
+
+Route::any('/deletarPostagens', 'PostagensController@deletarPostagem')->name('deletarPostagem');
