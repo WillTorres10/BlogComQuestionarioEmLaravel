@@ -11,9 +11,21 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Cadastrar Questões</div>
                     <div class="panel-body">
-                         <form class="form-horizontal" method="POST" action="{{ route('cadastrarQuestoes') }}">
+                         <form class="form-horizontal" method="POST">
                         {{ csrf_field() }}
-
+                        
+                        <div class="form-group">
+                            <label for="pergunta" class="col-md-4 control-label">ID Quiz</label>
+                            <div class="col-md-6">
+                                <input id="IdQuiz" type="text" class="form-control" name="IdQuiz" value="{{$id}}" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pergunta" class="col-md-4 control-label">Titulo Quiz</label>
+                            <div class="col-md-6">
+                                <input id="TituloQuiz" type="text" class="form-control" name="pergunta" value="{{$titulo}}" readonly>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="pergunta" class="col-md-4 control-label">Pergunta</label>
                             <div class="col-md-6">

@@ -8,13 +8,6 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Adminstração</div>
                 <div class="panel-body">
-                	<h3>Questionário</h3>
-                    <ul>
-                        <li><a href="{{ route('cadastrarQuestoes') }}">Cadastrar Questionário</a></li>
-                        <li><a href="{{ route('editarQuestionario') }}">Editar Questionário</a></li>
-                        <li><a href="{{ route('listarResultados') }}">Vizualizar Resultados</a></li>
-                        <li><a href="{{ route('deletarQuestionario') }}">Deletar Questionário</a></li>
-                    </ul>
                     <h3>Postagens</h3>
                     <ul>
                         <li><a href="{{ route('cadastrarPostagens') }}">Cadastrar Postagem</a></li>
@@ -36,7 +29,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="{{ route('listarQuestoes') }}">Listar Questões</a>
+                    <a href="{{ route('listarQuiz') }}">Quizes</a>
 
                 </div>
             </div>

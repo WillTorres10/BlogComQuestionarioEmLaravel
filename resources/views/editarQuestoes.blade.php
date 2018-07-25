@@ -13,23 +13,6 @@
                     <div class="panel-body">
                          <form class="form-horizontal" method="POST">
                         {{ csrf_field() }}
-                        @if ($sucesso == true)
-    						<div class="alert alert-success">
-                              	<strong>Sucesso!</strong> Operação realizada com sucesso.
-                            </div>
-                        @endif
-						@if($selecionar==true)
-    						<label>Selecione a questão</label>
-                            <div class="form-group text-center">
-                            	<select class="custom-select custom-select-lg mb-3" size="15" style="width:90%;" name="selecionarQuestao">                                	
-                                    @foreach( $questoes as $quest)
-                                    <option value="{{$quest->id}}">{{$quest->tituloPergunta}}</option>
-                                	@endforeach
-                                </select><br><br>
-                        		<button type="submit" class="btn btn-primary mb-2">Selecionar</button>
-                        	</div>
-						@endif
-						@if($selecionar==false)
                             <div class="form-group">
                             		<label for="pergunta" class="col-md-4 control-label">ID Questionario</label>
                             	<div class="col-md-6">
@@ -64,7 +47,6 @@
                                     </button>
                                 </div>
                             </div>
-                        @endif
                     </form>
 
                     </div>

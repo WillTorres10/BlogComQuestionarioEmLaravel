@@ -15,17 +15,27 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::any('/cadastrarQuestoes', 'questoesController@cadastrar')->name('cadastrarQuestoes');
+//Links relacionados ao sistema de quizs
 
-Route::any('/listarQuestoes', 'questoesController@listarPerguntas')->name('listarQuestoes');
+Route::any('/cadastrarQuiz', 'quizController@cadastrar')->name('cadastrarQuiz');
 
-Route::any('/responderQuestoes/{id}', 'questoesController@votar')->name('responderQuestoes');
+Route::any('/listarQuiz', 'quizController@listarQuiz')->name('listarQuiz');
 
-Route::any('/listarResultados', 'questoesController@listarResultados')->name('listarResultados');
+Route::any('/verQuiz/{id}', 'quizController@verQuiz')->name('verQuiz');
 
-Route::any('/editarQuestoes', 'questoesController@editarQuestao')->name('editarQuestionario');
+Route::any('/editQuiz/{id}', 'quizController@editar')->name('editQuiz');
 
-Route::any('/deletarQuestoes', 'questoesController@deletarQuestao')->name('deletarQuestionario');
+Route::any('/deleteQuiz/{id}', 'quizController@deletar')->name('deleteQuiz');
+
+Route::any('/resultadoQuiz/{id}', 'quizController@resultados')->name('resultadoQuiz');
+
+Route::any('/cadastrarQuestoes/{id}', 'questoesController@cadastrar')->name('cadastrarQuestoes');
+
+Route::any('/editarQuestoes/{quiz}/{id}', 'questoesController@editarQuestao')->name('editarQuestionario');
+
+Route::any('/deletarQuestoes/{quiz}/{id}', 'questoesController@deletarQuestao')->name('deletarQuestionario');
+
+//Links relacionados ao sistema de postagens
 
 Route::any('/cadastrarPostagens', 'PostagensController@cadastrarPostagem')->name('cadastrarPostagens');
 
